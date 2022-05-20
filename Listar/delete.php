@@ -1,5 +1,11 @@
 <?php include("../conexion.php");
 
-if(isset($_POST[''])){
 
+$id = $_GET['id'];
+
+$consulta = "DELETE FROM imagenes WHERE id = '$id'";
+$resultado = mysqli_query($con,$consulta);
+
+if($resultado){
+    header("Location: read.php");
 }
